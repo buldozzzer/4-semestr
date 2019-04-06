@@ -11,6 +11,7 @@ do
 Group=1
 Student_number=19
 Task_number=$(tail -n 1 $directory_task/$i.txt | cut -d '.' -f 1)
+echo "$Task_number"
 Task=$((($Student_number+$i*$Group)%$Task_number+1))
 Task_text=$(grep "$Task." -m 1 $directory_task/$i.txt)
 
